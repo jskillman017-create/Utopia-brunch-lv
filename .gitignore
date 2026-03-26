@@ -1,0 +1,28 @@
+# Node.js
+
+# Logs
+logs
+*.log
+npm-debug.log*  
+.yarn-integrity
+
+# Dependency directories
+node_modules/
+
+# Build output
+/dist/
+/build/
+
+# Local env files
+.env
+.env.test
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
