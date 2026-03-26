@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Utopia Brunch LV</title>
+
+<!-- PWA Meta Tags -->
+<meta name="application-name" content="Utopia Brunch LV">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Utopia LV">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Utopia Brunch LV — Exotic Dish Scavenger Hunt. Three venues. Three dishes. One Utopia Pass.">
+
+<!-- PWA Manifest (inline as data URI so it works from a single file) -->
+<link rel="manifest" href="data:application/json;charset=utf-8,{
+  %22name%22:%22Utopia%20Brunch%20LV%22,
+  %22short_name%22:%22Utopia%20LV%22,
+  %22description%22:%22Exotic%20Dish%20Scavenger%20Hunt%22,
+  %22start_url%22:%22.%2F%22,
+  %22display%22:%22standalone%22,
+  %22background_color%22:%22%23000000%22,
+  %22theme_color%22:%22%2300D4E8%22,
+  %22orientation%22:%22portrait%22,
+  %22icons%22:[{%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20512%20512'%3E%3Crect%20width%3D'512'%20height%3D'512'%20fill%3D'%23000'%2F%3E%3Cpolygon%20points%3D'256%2C60%20420%2C152%20420%2C340%20256%2C432%2092%2C340%2092%2C152'%20stroke%3D'%2300D4E8'%20stroke-width%3D'18'%20fill%3D'none'%2F%3E%3Cline%20x1%3D'256'%20y1%3D'110'%20x2%3D'256'%20y2%3D'400'%20stroke%3D'%2300D4E8'%20stroke-width%3D'16'%20stroke-linecap%3D'round'%2F%3E%3Cline%20x1%3D'110'%20y1%3D'256'%20x2%3D'400'%20y2%3D'256'%20stroke%3D'%2300D4E8'%20stroke-width%3D'16'%20stroke-linecap%3D'round'%2F%3E%3Cline%20x1%3D'155'%20y1%3D'155'%20x2%3D'357'%20y2%3D'357'%20stroke%3D'%2300D4E8'%20stroke-width%3D'16'%20stroke-linecap%3D'round'%2F%3E%3Cline%20x1%3D'357'%20y1%3D'155'%20x2%3D'155'%20y2%3D'357'%20stroke%3D'%2300D4E8'%20stroke-width%3D'16'%20stroke-linecap%3D'round'%2F%3E%3Ccircle%20cx%3D'256'%20cy%3D'256'%20r%3D'24'%20fill%3D'%2300D4E8'%2F%3E%3C%2Fsvg%3E%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22,%22purpose%22:%22any%20maskable%22}]
+}">
+
+<!-- Apple Touch Icon (inline SVG → base64 PNG fallback via canvas) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20180%20180'%3E%3Crect%20width%3D'180'%20height%3D'180'%20rx%3D'40'%20fill%3D'%23000'%2F%3E%3Cpolygon%20points%3D'90%2C18%20152%2C54%20152%2C126%2090%2C162%2028%2C126%2028%2C54'%20stroke%3D'%2300D4E8'%20stroke-width%3D'7'%20fill%3D'none'%2F%3E%3Cline%20x1%3D'90'%20y1%3D'38'%20x2%3D'90'%20y2%3D'142'%20stroke%3D'%2300D4E8'%20stroke-width%3D'6'%20stroke-linecap%3D'round'%2F%3E%3Cline%20x1%3D'38'%20y1%3D'90'%20x2%3D'142'%20y2%3D'90'%20stroke%3D'%2300D4E8'%20stroke-width%3D'6'%20stroke-linecap%3D'round'%2F%3E%3Cline%20x1%3D'54'%20y1%3D'54'%20x2%3D'126'%20y2%3D'126'%20stroke%3D'%2300D4E8'%20stroke-width%3D'6'%20stroke-linecap%3D'round'%2F%3E%3Cline%20x1%3D'126'%20y1%3D'54'%20x2%3D'54'%20y2%3D'126'%20stroke%3D'%2300D4E8'%20stroke-width%3D'6'%20stroke-linecap%3D'round'%2F%3E%3Ccircle%20cx%3D'90'%20cy%3D'90'%20r%3D'9'%20fill%3D'%2300D4E8'%2F%3E%3C%2Fsvg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyan: #00D4E8;
+    --cyan-bright: #2FECFF;
+    --cyan-dim: #00A0B0;
+    --cyan-glow: rgba(0,212,232,0.25);
+    --cyan-trace: rgba(0,212,232,0.08);
+    --black: #000000;
+    --deep: #050810;
+    --surface: #0A0F18;
+    --surface2: #0F1520;
+    --text: #E8F8FA;
+    --text-dim: #4A7A82;
+    --text-mid: #8ABFC8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body { height: 100%; overflow: hidden; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  /* SCREENS */
+  .screen { display: none; height: 100vh; flex-direction: column; overflow: hidden; position: relative; }
+  .screen.active { display: flex; }
+
+  /* ─── SHARED BG ─── */
+  .bg-base {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 110%, rgba(0,212,232,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% -20%, rgba(0,212,232,0.04) 0%, transparent 50%),
+      var(--deep);
+    pointer-events: none;
+  }
+
+  /* GRID LINES */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,212,232,0.03) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,212,232,0.03) 40px);
+    pointer-events: none;
+  }
+
+  /* NOISE */
+  .bg-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* ════════════════════════════════
+     WELCOME SCREEN
+  ════════════════════════════════ */
+  #welcome { align-items: center; justify-content: space-between; padding: 48px 28px 44px; }
+
+  .welcome-top {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    animation: fadeDown 0.7s ease-out both;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .launch-tag {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    border: 1px solid rgba(0,212,232,0.3);
+    padding: 5px 14px;
+    background: var(--cyan-trace);
+  }
+
+  /* SNOWFLAKE LOGO */
+  .logo-hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: heroIn 1s cubic-bezier(0.23,1,0.32,1) 0.15s both;
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: scale(0.88) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .hex-icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    position: relative;
+  }
+
+  .hex-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 20px rgba(0,212,232,0.5)) drop-shadow(0 0 40px rgba(0,212,232,0.2));
+    animation: hexPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes hexPulse {
+    0%, 100% { filter: drop-shadow(0 0 16px rgba(0,212,232,0.5)) drop-shadow(0 0 36px rgba(0,212,232,0.2)); }
+    50%       { filter: drop-shadow(0 0 28px rgba(0,212,232,0.8)) drop-shadow(0 0 60px rgba(0,212,232,0.35)); }
+  }
+
+  .brand-utopia {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(68px, 20vw, 96px);
+    letter-spacing: 4px;
+    color: var(--cyan);
+    line-height: 0.9;
+    text-shadow: 0 0 40px rgba(0,212,232,0.4), 0 0 80px rgba(0,212,232,0.15);
+  }
+
+  .brand-brunch {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(26px, 7vw, 38px);
+    letter-spacing: 10px;
+    color: var(--text);
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+
+  .brand-lv {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .cyan-rule {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    margin: 18px auto;
+    box-shadow: 0 0 8px var(--cyan-glow);
+  }
+
+  .welcome-tagline {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--text-mid);
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+
+  /* VENUE TICKER */
+  .ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin: 8px 0;
+  }
+  .ticker-wrap::before, .ticker-wrap::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 32px; z-index: 2;
+  }
+  .ticker-wrap::before { left: 0; background: linear-gradient(to right, var(--deep), transparent); }
+  .ticker-wrap::after  { right: 0; background: linear-gradient(to left, var(--deep), transparent); }
+
+  .ticker {
+    display: flex;
+    animation: ticker 12s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .tick-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    padding: 0 20px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .tick-item b { color: var(--cyan); margin-right: 16px; }
+
+  /* IZZY WELCOME BOX */
+  .izzy-welcome {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: var(--cyan-trace);
+    border: 1px solid rgba(0,212,232,0.18);
+    border-left: 3px solid var(--cyan);
+    padding: 14px 16px;
+    animation: fadeUp 0.8s ease-out 0.5s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .izzy-lbl {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .izzy-txt {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    animation: fadeUp 0.8s ease-out 0.7s both;
+  }
+
+  .btn-cyan {
+    display: block;
+    width: 100%;
+    background: var(--cyan);
+    border: none;
+    color: var(--black);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 5px;
+    padding: 17px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,212,232,0.35), 0 0 60px rgba(0,212,232,0.1);
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-cyan::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+  .btn-cyan:hover { background: var(--cyan-bright); box-shadow: 0 0 30px rgba(0,212,232,0.6); letter-spacing: 6px; }
+  .btn-cyan:hover::after { transform: translateX(100%); }
+  .btn-cyan:active { transform: scale(0.99); }
+
+  .cta-hint {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  /* ════════════════════════════════
+     LOGIN SCREEN
+  ════════════════════════════════ */
+  #login { align-items: center; justify-content: center; padding: 40px 28px; }
+
+  .login-inner {
+    position: relative; z-index: 1;
+    width: 100%; max-width: 400px;
+    animation: fadeUp 0.6s ease-out both;
+  }
+
+  .login-head {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .login-head .small-hex {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px var(--cyan));
+  }
+
+  .login-head h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+    color: var(--cyan);
+  }
+
+  .login-head p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .field { margin-bottom: 18px; }
+
+  .field-lbl {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .field-inp {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid rgba(0,212,232,0.2);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .field-inp:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 1px rgba(0,212,232,0.3), inset 0 0 20px rgba(0,212,232,0.03);
+  }
+  .field-inp::placeholder { color: var(--text-dim); }
+
+  .btn-full-cyan {
+    width: 100%;
+    background: var(--cyan);
+    border: none;
+    color: var(--black);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding: 16px;
+    cursor: pointer;
+    margin-top: 6px;
+    box-shadow: 0 0 20px rgba(0,212,232,0.3);
+    transition: all 0.2s;
+  }
+  .btn-full-cyan:hover { background: var(--cyan-bright); }
+  .btn-full-cyan:active { transform: scale(0.99); }
+
+  .login-note {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-top: 14px;
+  }
+  .login-note strong { color: var(--cyan); }
+
+  /* ════════════════════════════════
+     HUNT SCREEN
+  ════════════════════════════════ */
+  #hunt { overflow-y: auto; }
+
+  .hunt-header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(5,8,16,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,212,232,0.12);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .h-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .h-logo-icon { font-size: 20px; filter: drop-shadow(0 0 6px var(--cyan)); }
+  .h-logo-txt {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+  }
+
+  .h-user {
+    text-align: right;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .h-user-name { font-size: 12px; color: var(--text); letter-spacing: 1px; }
+  .h-user-sub  { font-size: 9px; color: var(--text-dim); letter-spacing: 1px; margin-top: 2px; }
+
+  /* IZZY BAR */
+  .izzy-bar {
+    background: linear-gradient(135deg, rgba(0,212,232,0.06) 0%, rgba(0,212,232,0.02) 100%);
+    border-bottom: 1px solid rgba(0,212,232,0.12);
+    padding: 16px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+
+  .izzy-orb {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--cyan-bright), var(--cyan-dim));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 0 16px rgba(0,212,232,0.4);
+    animation: orbPulse 3s ease-in-out infinite;
+  }
+  @keyframes orbPulse {
+    0%,100% { box-shadow: 0 0 16px rgba(0,212,232,0.4); }
+    50%      { box-shadow: 0 0 28px rgba(0,212,232,0.7); }
+  }
+
+  .izzy-body { flex: 1; }
+  .izzy-who {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px; letter-spacing: 3px; color: var(--cyan);
+    text-transform: uppercase; margin-bottom: 5px;
+  }
+  .izzy-say {
+    font-size: 16px; font-weight: 300; font-style: italic;
+    color: var(--text); line-height: 1.45;
+    animation: msgIn 0.4s ease-out;
+  }
+  @keyframes msgIn {
+    from { opacity: 0; transform: translateX(-6px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* PROGRESS */
+  .prog-bar-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0,212,232,0.08);
+    flex-shrink: 0;
+  }
+  .prog-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 8px;
+  }
+  .prog-lbl { font-family: 'Share Tech Mono', monospace; font-size: 9px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
+  .prog-num { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--cyan); letter-spacing: 2px; }
+  .prog-track {
+    height: 2px; background: var(--surface2); position: relative; overflow: hidden;
+  }
+  .prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan-dim), var(--cyan), var(--cyan-bright));
+    box-shadow: 0 0 8px var(--cyan);
+    transition: width 0.9s cubic-bezier(0.23,1,0.32,1);
+  }
+
+  /* VENUE CARDS */
+  .venues {
+    flex: 1;
+    padding: 16px 20px 80px;
+    display: flex; flex-direction: column; gap: 12px;
+    position: relative; z-index: 1;
+  }
+
+  .v-card {
+    background: var(--surface);
+    border: 1px solid rgba(0,212,232,0.1);
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .v-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--cyan);
+    transform: scaleY(0);
+    transition: transform 0.35s ease;
+  }
+
+  .v-card.v-active {
+    border-color: rgba(0,212,232,0.35);
+    background: rgba(0,212,232,0.04);
+    box-shadow: 0 0 20px rgba(0,212,232,0.06);
+  }
+  .v-card.v-active::before { transform: scaleY(1); }
+
+  .v-card.v-done {
+    border-color: rgba(0,212,232,0.15);
+    opacity: 0.65;
+  }
+  .v-card.v-done::before { background: #00E896; transform: scaleY(1); }
+
+  .v-card.v-locked { opacity: 0.3; }
+
+  .v-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .v-stop {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px; color: var(--text-dim); letter-spacing: 2px;
+  }
+
+  .v-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px; letter-spacing: 1px;
+    padding: 4px 10px; text-transform: uppercase;
+  }
+  .vb-active  { background: rgba(0,212,232,0.1); color: var(--cyan);   border: 1px solid rgba(0,212,232,0.35); }
+  .vb-done    { background: rgba(0,232,150,0.1); color: #00E896;        border: 1px solid rgba(0,232,150,0.35); }
+  .vb-locked  { background: rgba(255,255,255,0.03); color: var(--text-dim); border: 1px solid rgba(255,255,255,0.06); }
+
+  .v-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px; letter-spacing: 2px; color: var(--text); line-height: 1;
+    margin-bottom: 2px;
+  }
+  .v-name-sub { font-size: 18px; color: var(--text-dim); }
+
+  .v-dish {
+    font-size: 15px; font-weight: 300; font-style: italic;
+    color: var(--text-mid); margin-bottom: 8px;
+  }
+
+  .v-hint {
+    font-size: 13px; font-weight: 300;
+    color: var(--text-dim); line-height: 1.45;
+    font-style: italic; margin-bottom: 10px;
+  }
+
+  .v-coords {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px; color: rgba(0,212,232,0.35); letter-spacing: 1px;
+  }
+
+  .v-checkin-btn {
+    width: 100%;
+    background: var(--cyan);
+    border: none;
+    color: var(--black);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px; letter-spacing: 3px;
+    padding: 11px;
+    cursor: pointer;
+    margin-top: 14px;
+    box-shadow: 0 0 14px rgba(0,212,232,0.3);
+    transition: all 0.2s;
+  }
+  .v-checkin-btn:hover { background: var(--cyan-bright); }
+  .v-checkin-btn:active { transform: scale(0.99); }
+
+  .v-stamp {
+    margin-top: 12px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px; letter-spacing: 2px;
+    color: #00E896; text-transform: uppercase;
+  }
+
+  /* ─── CHECKING OVERLAY ─── */
+  .overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 200;
+    align-items: center; justify-content: center; flex-direction: column; gap: 18px;
+  }
+  .overlay.on { display: flex; }
+
+  .spin-ring {
+    width: 52px; height: 52px;
+    border: 2px solid rgba(0,212,232,0.15);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+    box-shadow: 0 0 20px rgba(0,212,232,0.3);
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .overlay-txt {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px; letter-spacing: 3px;
+    color: var(--cyan); text-transform: uppercase;
+  }
+
+  /* ════════════════════════════════
+     WINNER SCREEN
+  ════════════════════════════════ */
+  #winner {
+    align-items: center; justify-content: center;
+    padding: 32px 24px 40px;
+    overflow-y: auto;
+  }
+
+  .winner-inner {
+    position: relative; z-index: 1;
+    text-align: center;
+    width: 100%; max-width: 380px;
+    animation: winIn 0.9s cubic-bezier(0.23,1,0.32,1) both;
+  }
+
+  @keyframes winIn {
+    0%   { opacity: 0; transform: scale(0.85) translateY(24px); }
+    60%  { transform: scale(1.02) translateY(-4px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .win-eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px; letter-spacing: 4px;
+    color: var(--text-dim); text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .win-all {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px; letter-spacing: 5px;
+    color: var(--text-dim); margin-bottom: 20px;
+  }
+
+  /* PASS CARD */
+  .pass {
+    background: linear-gradient(160deg, #061218 0%, #020A10 100%);
+    border: 1px solid var(--cyan);
+    box-shadow: 0 0 40px rgba(0,212,232,0.2), 0 0 80px rgba(0,212,232,0.08), inset 0 0 30px rgba(0,212,232,0.03);
+    padding: 32px 28px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pass::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: 
+      repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0,212,232,0.025) 20px),
+      repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(0,212,232,0.025) 20px);
+    pointer-events: none;
+  }
+
+  .pass-corner {
+    position: absolute;
+    width: 16px; height: 16px;
+    border-color: var(--cyan); border-style: solid; border-width: 0;
+  }
+  .pc-tl { top: 8px; left: 8px; border-top-width: 1px; border-left-width: 1px; }
+  .pc-tr { top: 8px; right: 8px; border-top-width: 1px; border-right-width: 1px; }
+  .pc-bl { bottom: 8px; left: 8px; border-bottom-width: 1px; border-left-width: 1px; }
+  .pc-br { bottom: 8px; right: 8px; border-bottom-width: 1px; border-right-width: 1px; }
+
+  .pass-hex {
+    font-size: 40px;
+    filter: drop-shadow(0 0 12px var(--cyan));
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .pass-type {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px; letter-spacing: 4px;
+    color: var(--cyan); text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .pass-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px; letter-spacing: 4px;
+    color: var(--cyan);
+    text-shadow: 0 0 30px rgba(0,212,232,0.5);
+    line-height: 0.9; margin-bottom: 4px;
+  }
+
+  .pass-subtitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 6px;
+    color: var(--text); opacity: 0.7;
+    margin-bottom: 20px;
+  }
+
+  .pass-rule {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    margin: 16px 0;
+    box-shadow: 0 0 6px var(--cyan-glow);
+  }
+
+  .pass-holder-lbl {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px; letter-spacing: 3px; color: var(--text-dim);
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+
+  .pass-holder-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px; letter-spacing: 3px; color: var(--text);
+  }
+
+  .pass-venues {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px; letter-spacing: 2px;
+    color: rgba(0,212,232,0.5); text-transform: uppercase;
+    margin-top: 16px; line-height: 1.8;
+  }
+
+  .pass-date {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px; letter-spacing: 2px;
+    color: var(--text-dim); margin-top: 14px;
+  }
+
+  /* QR */
+  .pass-qr {
+    width: 72px; height: 72px;
+    background: var(--cyan);
+    margin: 16px auto 0;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(7,1fr);
+    gap: 2px; padding: 7px;
+    box-shadow: 0 0 16px rgba(0,212,232,0.4);
+  }
+  .qc { }
+
+  .pass-instruction {
+    font-size: 15px; font-weight: 300; font-style: italic;
+    color: var(--text-mid); margin: 20px 0 24px;
+    line-height: 1.55;
+  }
+
+  .btn-outline-cyan {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    cursor: pointer;
+    position: relative; overflow: hidden;
+    transition: color 0.3s;
+  }
+  .btn-outline-cyan::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--cyan);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .btn-outline-cyan:hover::before { transform: translateX(0); }
+  .btn-outline-cyan:hover { color: var(--black); }
+  .btn-outline-cyan span { position: relative; z-index: 1; }
+
+  /* CONFETTI */
+  .cf {
+    position: fixed; width: 6px; height: 6px;
+    top: -10px; pointer-events: none;
+    animation: cfFall linear forwards; opacity: 0;
+    z-index: 500;
+  }
+  @keyframes cfFall {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* FLOATING PARTICLES */
+  .fp {
+    position: fixed; border-radius: 50%;
+    background: var(--cyan);
+    pointer-events: none;
+    animation: fpRise linear infinite;
+    opacity: 0;
+  }
+  @keyframes fpRise {
+    0%   { opacity: 0; transform: translateY(0); }
+    10%  { opacity: 0.5; }
+    90%  { opacity: 0.1; }
+    100% { opacity: 0; transform: translateY(-90vh); }
+  }
+</style>
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="ov">
+  <div class="spin-ring"></div>
+  <div class="overlay-txt" id="ovTxt">Verifying Location...</div>
+</div>
+
+<!-- ══ WELCOME ══ -->
+<div class="screen active" id="welcome">
+  <div class="bg-base"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+
+  <div class="welcome-top">
+    <span class="launch-tag">✦ Launch Night · March 26, 2026</span>
+  </div>
+
+  <div class="logo-hero">
+    <div class="hex-icon">
+      <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hex border -->
+        <polygon points="55,4 97,27.5 97,74.5 55,98 13,74.5 13,27.5" stroke="#00D4E8" stroke-width="3" fill="none"/>
+        <!-- Snowflake -->
+        <line x1="55" y1="22" x2="55" y2="88" stroke="#00D4E8" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="22" y1="55" x2="88" y2="55" stroke="#00D4E8" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="31" y1="31" x2="79" y2="79" stroke="#00D4E8" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="79" y1="31" x2="31" y2="79" stroke="#00D4E8" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Snowflake tips -->
+        <line x1="55" y1="22" x2="49" y2="30" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="55" y1="22" x2="61" y2="30" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="55" y1="88" x2="49" y2="80" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="55" y1="88" x2="61" y2="80" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="22" y1="55" x2="30" y2="49" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="22" y1="55" x2="30" y2="61" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="88" y1="55" x2="80" y2="49" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="88" y1="55" x2="80" y2="61" stroke="#00D4E8" stroke-width="2" stroke-linecap="round"/>
+        <!-- dots -->
+        <circle cx="55" cy="55" r="5" fill="#00D4E8"/>
+        <circle cx="38" cy="38" r="3" fill="#00D4E8"/>
+        <circle cx="72" cy="38" r="3" fill="#00D4E8"/>
+        <circle cx="38" cy="72" r="3" fill="#00D4E8"/>
+        <circle cx="72" cy="72" r="3" fill="#00D4E8"/>
+      </svg>
+    </div>
+    <div class="brand-utopia">UTOPIA</div>
+    <div class="brand-brunch">BRUNCH</div>
+    <div class="cyan-rule"></div>
+    <div class="brand-lv">Las Vegas · Afterhours Experience</div>
+    <div style="margin-top:12px;font-size:16px;font-weight:300;color:var(--text-dim);letter-spacing:1px;font-style:italic;">
+      Three venues. Three dishes. One pass.
+    </div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <div class="tick-item"><b>✦</b>Hakkasan</div>
+      <div class="tick-item"><b>✦</b>Main St. Provisions</div>
+      <div class="tick-item"><b>✦</b>Caramella</div>
+      <div class="tick-item"><b>✦</b>Find · Eat · Stamp</div>
+      <div class="tick-item"><b>✦</b>Hakkasan</div>
+      <div class="tick-item"><b>✦</b>Main St. Provisions</div>
+      <div class="tick-item"><b>✦</b>Caramella</div>
+      <div class="tick-item"><b>✦</b>Find · Eat · Stamp</div>
+    </div>
+  </div>
+
+  <div class="izzy-welcome" style="position:relative;z-index:1;">
+    <div class="izzy-lbl">✦ Izzy — Your Guide Tonight</div>
+    <div class="izzy-txt">"The city holds secrets only the bold find. Follow the dishes, earn your stamps, and the Utopia Pass is yours."</div>
+  </div>
+
+  <div class="cta-wrap" style="margin-top:16px;">
+    <button class="btn-cyan" onclick="showScreen('login')">Begin The Hunt →</button>
+    <div class="cta-hint">Enter your name · Visit 3 venues · Claim your pass</div>
+  </div>
+</div>
+
+<!-- ══ LOGIN ══ -->
+<div class="screen" id="login">
+  <div class="bg-base"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+
+  <div class="login-inner">
+    <div class="login-head">
+      <span class="small-hex">❄</span>
+      <h2>Begin Your Hunt</h2>
+      <p>Enter your details to unlock the experience</p>
+    </div>
+    <div class="field">
+      <label class="field-lbl">Your Name</label>
+      <input type="text" class="field-inp" id="nameInp" placeholder="Enter your name..." autocomplete="off">
+    </div>
+    <div class="field">
+      <label class="field-lbl">Access Code</label>
+      <input type="text" class="field-inp" id="codeInp" placeholder="UTOPIA2026" autocomplete="off">
+    </div>
+    <button class="btn-full-cyan" onclick="startHunt()">Enter the Afterhours →</button>
+    <p class="login-note">Access code: <strong>UTOPIA2026</strong></p>
+  </div>
+</div>
+
+<!-- ══ HUNT ══ -->
+<div class="screen" id="hunt">
+  <div class="bg-base"></div>
+  <div class="bg-noise"></div>
+
+  <div class="hunt-header">
+    <div class="h-logo">
+      <span class="h-logo-icon">❄</span>
+      <span class="h-logo-txt">UTOPIA LV</span>
+    </div>
+    <div class="h-user">
+      <div class="h-user-name" id="hName">HUNTER</div>
+      <div class="h-user-sub">March 26 · Launch Night</div>
+    </div>
+  </div>
+
+  <div class="izzy-bar">
+    <div class="izzy-orb">❄</div>
+    <div class="izzy-body">
+      <div class="izzy-who">✦ Izzy — Guide</div>
+      <div class="izzy-say" id="izzyMsg">Welcome to the Afterhours. Head to Hakkasan to find your first exotic dish!</div>
+    </div>
+  </div>
+
+  <div class="prog-bar-section">
+    <div class="prog-row">
+      <span class="prog-lbl">Utopia Pass Progress</span>
+      <span class="prog-num" id="progNum">0 / 3</span>
+    </div>
+    <div class="prog-track">
+      <div class="prog-fill" id="progFill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="venues" id="venueList"></div>
+</div>
+
+<!-- ══ WINNER ══ -->
+<div class="screen" id="winner">
+  <div class="bg-base"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+
+  <div class="winner-inner">
+    <div class="win-eyebrow">You made it</div>
+    <div class="win-all">ALL THREE VENUES CONQUERED</div>
+
+    <div class="pass">
+      <div class="pass-corner pc-tl"></div>
+      <div class="pass-corner pc-tr"></div>
+      <div class="pass-corner pc-bl"></div>
+      <div class="pass-corner pc-br"></div>
+
+      <span class="pass-hex">❄</span>
+      <div class="pass-type">Official Document · Utopia Brunch LV</div>
+      <div class="pass-title">UTOPIA</div>
+      <div class="pass-subtitle">PASS</div>
+      <div class="pass-rule"></div>
+      <div class="pass-holder-lbl">Pass Holder</div>
+      <div class="pass-holder-name" id="winName">JAVON</div>
+      <div class="pass-rule"></div>
+      <div class="pass-venues">
+        ✦ Hakkasan · Verified<br>
+        ✦ Main St. Provisions · Verified<br>
+        ✦ Caramella · Verified
+      </div>
+      <div id="qrWrap" class="pass-qr"></div>
+      <div class="pass-date">ISSUED: MARCH 26, 2026 · LAUNCH NIGHT</div>
+    </div>
+
+    <p class="pass-instruction">
+      "Show this pass to the host<br>to claim your exclusive reward."<br>
+      <em style="font-size:13px;opacity:0.6;">— Izzy</em>
+    </p>
+
+    <button class="btn-outline-cyan" onclick="resetApp()">
+      <span>Play Again</span>
+    </button>
+  </div>
+</div>
+
+<script>
+const VENUES = [
+  { id:'hakkasan', name:'HAKKASAN', sub:'', dish:'Peking Duck & Dim Sum Selection', coords:'36.1018, -115.1724', hint:'"Find the exotic Cantonese masterpiece hidden in plain sight."', icon:'🦆' },
+  { id:'mainst',   name:'MAIN ST.', sub:'PROVISIONS', dish:'Smoked Wagyu Bone Marrow Toast', coords:'36.1554, -115.1534', hint:'"Where old meets extraordinary — seek the weekend special."', icon:'🥩' },
+  { id:'caramella',name:'CARAMELLA', sub:'', dish:'Truffle Honey Ricotta Crostini', coords:'36.1132, -115.1762', hint:'"Sweet endings await. Find the golden dish that seals your fate."', icon:'🍯' }
+];
+
+const IZZY = [
+  "Welcome to the Afterhours. Head to Hakkasan to find your first exotic dish!",
+  "One down, two to go. Main St. Provisions is calling your name.",
+  "You're one dish away from Utopia. Finish up at Caramella!",
+  "You made it! Show your Utopia Pass to the host to claim your reward."
+];
+
+let state = { name:'', progress:0, done:[] };
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function startHunt() {
+  const n = document.getElementById('nameInp').value.trim();
+  if (!n) {
+    const el = document.getElementById('nameInp');
+    el.style.borderColor = '#FF4444';
+    el.focus();
+    setTimeout(() => el.style.borderColor = '', 1500);
+    return;
+  }
+  state.name = n;
+  document.getElementById('hName').textContent = n.toUpperCase();
+  renderVenues(); updateHuntUI();
+  showScreen('hunt');
+}
+
+function renderVenues() {
+  const wrap = document.getElementById('venueList');
+  wrap.innerHTML = '';
+  VENUES.forEach((v, i) => {
+    const done   = state.done.includes(v.id);
+    const active = i === state.progress && !done;
+    const locked = i > state.progress;
+
+    let cls = locked ? 'v-locked' : done ? 'v-done' : active ? 'v-active' : '';
+    let badge = locked
+      ? '<span class="v-badge vb-locked">🔒 Locked</span>'
+      : done
+      ? '<span class="v-badge vb-done">✓ Complete</span>'
+      : '<span class="v-badge vb-active">● Active</span>';
+
+    const card = document.createElement('div');
+    card.className = `v-card ${cls}`;
+    card.innerHTML = `
+      <div class="v-top">
+        <div class="v-stop">STOP ${String(i+1).padStart(2,'0')}</div>
+        ${badge}
+      </div>
+      <div class="v-name">${v.name}${v.sub ? '<br><span class="v-name-sub">'+v.sub+'</span>' : ''}</div>
+      <div class="v-dish">${v.icon} &nbsp;${v.dish}</div>
+      <div class="v-hint">${v.hint}</div>
+      <div class="v-coords">📍 ${v.coords}</div>
+      ${active ? `<button class="v-checkin-btn" onclick="checkIn('${v.id}',${i})">📸 Check In Here</button>` : ''}
+      ${done ? `<div class="v-stamp">✓ Dish Verified &amp; Stamped</div>` : ''}
+    `;
+    wrap.appendChild(card);
+  });
+}
+
+function updateHuntUI() {
+  const el = document.getElementById('izzyMsg');
+  el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  el.textContent = IZZY[Math.min(state.progress, 3)];
+  document.getElementById('progFill').style.width = (state.progress/3*100) + '%';
+  document.getElementById('progNum').textContent = `${state.progress} / 3`;
+}
+
+function checkIn(vid, idx) {
+  const ov = document.getElementById('ov');
+  const txt = document.getElementById('ovTxt');
+  ov.classList.add('on'); txt.textContent = 'Verifying Location...';
+  setTimeout(() => txt.textContent = 'Validating Dish...', 900);
+  setTimeout(() => txt.textContent = '✓ Stamp Acquired!', 1800);
+  setTimeout(() => {
+    ov.classList.remove('on');
+    state.done.push(vid);
+    state.progress = idx + 1;
+    updateHuntUI(); renderVenues();
+    if (state.progress >= 3) setTimeout(revealPass, 500);
+  }, 2600);
+}
+
+function revealPass() {
+  document.getElementById('winName').textContent = state.name.toUpperCase();
+  buildQR();
+  showScreen('winner');
+  launchConfetti();
+}
+
+function buildQR() {
+  const wrap = document.getElementById('qrWrap');
+  wrap.innerHTML = '';
+  const p = [1,1,1,0,1,1,1, 1,0,1,0,1,0,1, 1,1,1,0,0,1,0, 0,0,0,0,1,0,1, 1,1,0,0,1,1,1, 1,0,0,0,1,0,1, 1,1,1,0,1,1,1];
+  p.forEach(v => {
+    const c = document.createElement('div');
+    c.className = 'qc';
+    c.style.background = v ? '#000' : 'transparent';
+    wrap.appendChild(c);
+  });
+}
+
+function launchConfetti() {
+  const colors = ['#00D4E8','#2FECFF','#00A0B0','#FFFFFF','rgba(0,212,232,0.5)'];
+  for (let i = 0; i < 55; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'cf';
+      c.style.cssText = `
+        left:${Math.random()*100}vw;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        width:${Math.random()*6+3}px;height:${Math.random()*6+3}px;
+        border-radius:${Math.random()>.5?'50%':'0'};
+        animation-duration:${Math.random()*2.5+2}s;
+        animation-delay:${Math.random()*0.4}s;
+      `;
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }, i * 55);
+  }
+}
+
+// Spawn ambient particles
+window.addEventListener('load', () => {
+  for (let i = 0; i < 14; i++) {
+    const p = document.createElement('div');
+    p.className = 'fp';
+    p.style.cssText = `
+      left:${Math.random()*100}vw; bottom:0;
+      width:${Math.random()>0.6?'3px':'2px'};
+      height:${Math.random()>0.6?'3px':'2px'};
+      animation-duration:${Math.random()*10+8}s;
+      animation-delay:${Math.random()*10}s;
+    `;
+    document.body.appendChild(p);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('codeInp').addEventListener('keydown', e => {
+    if (e.key === 'Enter') startHunt();
+  });
+});
+
+function resetApp() {
+  state = { name:'', progress:0, done:[] };
+  document.getElementById('nameInp').value = '';
+  document.getElementById('codeInp').value = '';
+  showScreen('welcome');
+}
+
+// ── PWA INSTALL PROMPT ──
+let deferredPrompt = null;
+
+const installBanner = document.createElement('div');
+installBanner.id = 'installBanner';
+installBanner.style.cssText = `
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:#000; border-top:1px solid rgba(0,212,232,0.4);
+  padding:14px 20px; align-items:center; justify-content:space-between;
+  gap:12px; font-family:'Share Tech Mono',monospace;
+  box-shadow: 0 -4px 20px rgba(0,212,232,0.15);
+`;
+installBanner.innerHTML = `
+  <div style="display:flex;align-items:center;gap:10px;flex:1;">
+    <span style="font-size:22px;filter:drop-shadow(0 0 6px #00D4E8);">❄</span>
+    <div>
+      <div style="font-size:11px;color:#00D4E8;letter-spacing:2px;text-transform:uppercase;">Add to Home Screen</div>
+      <div style="font-size:9px;color:#4A7A82;letter-spacing:1px;margin-top:2px;text-transform:uppercase;">Install Utopia Brunch LV as an app</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;">
+    <button id="installBtn" style="background:#00D4E8;border:none;color:#000;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;padding:9px 16px;cursor:pointer;text-transform:uppercase;font-weight:700;">Install</button>
+    <button id="dismissBtn" style="background:transparent;border:1px solid rgba(0,212,232,0.3);color:#4A7A82;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:1px;padding:9px 12px;cursor:pointer;">x</button>
+  </div>
+`;
+document.body.appendChild(installBanner);
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBanner.style.display = 'flex';
+});
+
+document.getElementById('installBtn').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  installBanner.style.display = 'none';
+});
+
+document.getElementById('dismissBtn').addEventListener('click', () => {
+  installBanner.style.display = 'none';
+});
+
+window.addEventListener('appinstalled', () => {
+  installBanner.style.display = 'none';
+  deferredPrompt = null;
+});
+
+// ── iOS hint (shows once per session) ──
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone = window.navigator.standalone;
+if (isIOS && !isStandalone && !sessionStorage.getItem('iosHintShown')) {
+  sessionStorage.setItem('iosHintShown', '1');
+  setTimeout(() => {
+    const hint = document.createElement('div');
+    hint.style.cssText = `
+      position:fixed; bottom:0; left:0; right:0; z-index:9999;
+      background:#000; border-top:1px solid rgba(0,212,232,0.4);
+      padding:16px 20px; text-align:center;
+      font-family:'Share Tech Mono',monospace;
+      box-shadow: 0 -4px 20px rgba(0,212,232,0.15);
+    `;
+    hint.innerHTML = `
+      <div style="font-size:11px;color:#00D4E8;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;">Install as App</div>
+      <div style="font-size:12px;color:#8ABFC8;line-height:1.5;">Tap <strong style="color:#00D4E8">Share</strong> then <strong style="color:#00D4E8">"Add to Home Screen"</strong></div>
+      <button onclick="this.parentElement.remove()" style="margin-top:12px;background:transparent;border:1px solid rgba(0,212,232,0.3);color:#4A7A82;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:1px;padding:7px 20px;cursor:pointer;">Got it</button>
+    `;
+    document.body.appendChild(hint);
+    setTimeout(() => hint.remove(), 8000);
+  }, 3000);
+}
+
+// ── Service Worker for offline ──
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE='utopia-v1';
+    self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['/'])));self.skipWaiting();});
+    self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim();});
+    self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).catch(()=>caches.match('/'))));});
+  `;
+  const blob = new Blob([swCode], {type:'application/javascript'});
+  navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
+}
+</script>
+</body>
+</html>
